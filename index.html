@@ -13,7 +13,7 @@
 
 <body>
     <header>
-        <img src="./assets/logo.svg" alt="Logo Dev Finance">
+        <img id="logo" src="./assets/logo.svg" alt="Logo Dev Finance">
     </header>
     <main class="container">
 
@@ -51,7 +51,7 @@
         <section id="transactions">
             <h2 class="sr-only">Transações</h2>
 
-            <a href="#" class="button new">+ Nova Transação</a>
+            <a href="#" onclick="modal.open()" class="button new">+ Nova Transação</a>
 
             <table id="data-table">
                 <thead>
@@ -87,7 +87,7 @@
 
     </main>
 
-    <div class="modal-overlay active">
+    <div class="modal-overlay">
         <div class="modal">
             <div id="form">
                 <h2>Nova Transação</h2>
@@ -134,10 +134,12 @@
                             name="date" 
                             type="date"
                         />
-                        <div class="input-group actions">
-                            <a href="#" class="button cancel">Cancelar</a>
-                            <button type="submit">Salvar</button>
-                        </div>                      
+                                              
+                    </div>
+
+                    <div class="input-group actions">
+                        <a href="#" onclick="modal.close()" class="button cancel">Cancelar</a>
+                        <button type="submit">Salvar</button>
                     </div>
                 </form>
             </div>
@@ -145,7 +147,28 @@
     </div>
 
     <footer>
-        <p></p>dev.finance$</p>
+        <p></p>2021   -   dev.finance$</p>
+
+        <script>
+            const modal={
+                open(){
+                    // abrir modal
+                    //adicionar class active ao modal
+                    document
+                        .querySelector('.modal-overlay')
+                        .classList
+                        .add('active')
+                },
+                close(){
+                    //fechar modal
+                    //remover class active do modal
+                    document
+                        .querySelector('.modal-overlay')
+                        .classList
+                        .remove('active')
+                }
+            }
+        </script>
     </footer>
 </body>
 
