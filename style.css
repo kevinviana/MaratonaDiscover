@@ -59,7 +59,6 @@ header{
 }
 #logo{
     color: #fff;
-    text-align: center;
     font-weight: 100;
 }
 
@@ -74,7 +73,7 @@ header{
 
 /*==========Cards=============*/
 .card{
-    background: #fff;
+    background: white;
     padding: 1.5rem 2rem;
     border-radius: .25rem;
 
@@ -104,12 +103,15 @@ header{
 }
 
 /*==========Table=============*/
-#data-table{
+#transactions{
     display: block;
     width:100%;
-    border-spacing:0rem .5rem;
-
     overflow-x: auto;
+}
+#data-table{
+    width:100%;
+    border-spacing:0rem .5rem;
+    color: #969cb3    
 }
 
 table tbody tr td:first-child,
@@ -128,23 +130,20 @@ table thead th{
     font-weight: normal;
     padding: 1rem 2rem;
     text-align: left;
-    color: #969cb3;
+    
+}
+
+table tbody tr{
+    opacity:.7;
 }
 
 table tbody td{
     background:white;
-
-    font-weight: normal;
     padding: 1rem 2rem;
-    text-align: left;
-    color: #969cb3;
 }
-table tbody tr{
-    opacity:.7;
-}
+
 table tbody tr:hover{
     opacity:1;
-    color:black;
 }
 
 td.description{
@@ -156,6 +155,34 @@ td.income{
 td.expense{
     color:#e92929
 }
+
+/*==========Modal=============*/
+.modal-overlay{
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0,0,0,.7);
+
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+}
+.modal-overlay.active{
+    opacity:1;
+    visibility: visible;
+}
+.modal{
+    background: #F0F2F5;
+    padding: 2.4rem;
+    position:relative;
+}
+
 
 /*==========Footer=============*/
 footer{
